@@ -79,7 +79,7 @@ def test_thin(capsys):
 
 
 @pytest.mark.skipif(sys.platform.startswith("win"), reason="no windows support yet")
-@pytest.mark.skipif(platform.machine() != 'x86_64', reason="Only X64 supported")
+@pytest.mark.skipif(platform.machine() not in ('x86_64', 'AMD64'), reason="Only X64 supported")
 @pytest.mark.external
 @pytest.mark.graph
 def test_dis_native(capsys):
